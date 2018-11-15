@@ -29,7 +29,7 @@ public class SetShooterCommand extends Command {
 	// Called repeatedly when this Command is scheduled to run
 	@Override
 	protected void execute() {
-		Robot.shooter.Shooter.set(status);
+		Robot.shooter.shooter.set(status);
 		finished = true;
 	}
 
