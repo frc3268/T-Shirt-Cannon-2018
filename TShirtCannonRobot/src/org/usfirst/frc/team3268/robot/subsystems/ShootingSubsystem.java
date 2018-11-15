@@ -7,29 +7,27 @@
 
 package org.usfirst.frc.team3268.robot.subsystems;
 
-import org.usfirst.frc.team3268.robot.Robot;
 import org.usfirst.frc.team3268.robot.RobotMap;
-import org.usfirst.frc.team3268.robot.commands.DrivingCommand;
 
 import edu.wpi.first.wpilibj.Solenoid;
-import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 
 /**
- * An example subsystem.  You can replace me with your own Subsystem.
+ * The shooter and the motor that aim it.
  */
 public class ShootingSubsystem extends Subsystem {
-	public Solenoid Shooter;
+
+	public Solenoid shooter;
 	public Talon motor;
+
 	// Put methods for controlling this subsystem
 	// here. Call these from Commands.
-	public ShootingSubsystem()
-	{
-		Shooter = new Solenoid(1);
-		motor = new Talon(RobotMap.LiftMotor);
+	public ShootingSubsystem() {
+		shooter = new Solenoid(1);
+		motor = new Talon(RobotMap.PWM_liftMotor);
 	}
+
 	public void initDefaultCommand() {
 		// Set the default command for a subsystem here.
 		// setDefaultCommand(new MySpecialCommand());

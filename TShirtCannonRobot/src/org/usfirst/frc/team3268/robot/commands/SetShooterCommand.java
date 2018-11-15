@@ -7,48 +7,36 @@
 
 package org.usfirst.frc.team3268.robot.commands;
 
-import edu.wpi.first.wpilibj.command.Command;
-
-import org.usfirst.frc.team3268.robot.OI;
 import org.usfirst.frc.team3268.robot.Robot;
 
+import edu.wpi.first.wpilibj.command.Command;
+
 /**
- * An example command.  You can replace me with your own command.
+ * Sets the state of the shooter to the boolean value it is passed.
  */
 public class SetShooterCommand extends Command {
+
 	boolean status;
+	boolean finished;
+
 	public SetShooterCommand(boolean val) {
 		// Use requires() here to declare subsystem dependencies
 		requires(Robot.shooter);
 		status = val;
-	}
-
-	// Called just before this Command runs the first time
-	@Override
-	protected void initialize() {
+		finished = false;
 	}
 
 	// Called repeatedly when this Command is scheduled to run
 	@Override
 	protected void execute() {
-		Robot.shooter.Shooter.set(status);
-		
+		Robot.shooter.shooter.set(status);
+		finished = true;
 	}
 
 	// Make this return true when this Command no longer needs to run execute()
 	@Override
 	protected boolean isFinished() {
-		return false;
+		return finished;
 	}
 
-	// Called once after isFinished returns true
-	@Override
-	protected void end() {
-	}
-
-	// Called when another command which requires one or more of the same
-	// subsystems is scheduled to run
-	@Override
-	protected void interrupted() {
-	}
 }

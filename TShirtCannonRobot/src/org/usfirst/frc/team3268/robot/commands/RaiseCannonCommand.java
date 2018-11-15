@@ -7,24 +7,18 @@
 
 package org.usfirst.frc.team3268.robot.commands;
 
-import edu.wpi.first.wpilibj.Talon;
+import org.usfirst.frc.team3268.robot.Robot;
+
 import edu.wpi.first.wpilibj.command.Command;
 
-import org.usfirst.frc.team3268.robot.OI;
-import org.usfirst.frc.team3268.robot.Robot;
-import org.usfirst.frc.team3268.robot.RobotMap;
-
 /**
- * An example command.  You can replace me with your own command.
+ * Begins increasing the cannon's inclination.
  */
 public class RaiseCannonCommand extends Command {
+	
 	public RaiseCannonCommand() {
 		// Use requires() here to declare subsystem dependencies
-	}
-
-	// Called just before this Command runs the first time
-	@Override
-	protected void initialize() {
+		requires(Robot.shooter);
 	}
 
 	// Called repeatedly when this Command is scheduled to run
@@ -38,15 +32,5 @@ public class RaiseCannonCommand extends Command {
 	protected boolean isFinished() {
 		return false;
 	}
-
-	// Called once after isFinished returns true
-	@Override
-	protected void end() {
-	}
-
-	// Called when another command which requires one or more of the same
-	// subsystems is scheduled to run
-	@Override
-	protected void interrupted() {
-	}
+	
 }
