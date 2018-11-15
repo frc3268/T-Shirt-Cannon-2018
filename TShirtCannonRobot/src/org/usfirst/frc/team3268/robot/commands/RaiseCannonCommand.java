@@ -7,15 +7,12 @@
 
 package org.usfirst.frc.team3268.robot.commands;
 
-import edu.wpi.first.wpilibj.Talon;
+import org.usfirst.frc.team3268.robot.Robot;
+
 import edu.wpi.first.wpilibj.command.Command;
 
-import org.usfirst.frc.team3268.robot.OI;
-import org.usfirst.frc.team3268.robot.Robot;
-import org.usfirst.frc.team3268.robot.RobotMap;
-
 /**
- * An example command.  You can replace me with your own command.
+ * An example command. You can replace me with your own command.
  */
 public class RaiseCannonCommand extends Command {
 	public RaiseCannonCommand() {

@@ -7,16 +7,16 @@
 
 package org.usfirst.frc.team3268.robot.commands;
 
-import edu.wpi.first.wpilibj.command.Command;
-
-import org.usfirst.frc.team3268.robot.OI;
 import org.usfirst.frc.team3268.robot.Robot;
 
+import edu.wpi.first.wpilibj.command.Command;
+
 /**
- * An example command.  You can replace me with your own command.
+ * An example command. You can replace me with your own command.
  */
 public class SetShooterCommand extends Command {
 	boolean status;
+
 	public SetShooterCommand(boolean val) {
 		// Use requires() here to declare subsystem dependencies
 		requires(Robot.shooter);
@@ -32,7 +32,7 @@ public class SetShooterCommand extends Command {
 	@Override
 	protected void execute() {
 		Robot.shooter.Shooter.set(status);
-		
+
 	}
 
 	// Make this return true when this Command no longer needs to run execute()

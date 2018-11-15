@@ -28,7 +28,7 @@ public class ShootingSubsystem extends Subsystem {
 	public ShootingSubsystem()
 	{
 		Shooter = new Solenoid(1);
-		motor = new Talon(RobotMap.LiftMotor);
+		motor = new Talon(RobotMap.PWM_liftMotor);
 	}
 	public void initDefaultCommand() {
 		// Set the default command for a subsystem here.
