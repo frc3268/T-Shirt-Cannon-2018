@@ -13,17 +13,13 @@ import org.usfirst.frc.team3268.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
- * An example command. You can replace me with your own command.
+ * Continuous joystick-based tankDrive movement.
  */
 public class DrivingCommand extends Command {
+
 	public DrivingCommand() {
 		// Use requires() here to declare subsystem dependencies
 		requires(Robot.driveTrain);
-	}
-
-	// Called just before this Command runs the first time
-	@Override
-	protected void initialize() {
 	}
 
 	// Called repeatedly when this Command is scheduled to run
@@ -41,11 +37,14 @@ public class DrivingCommand extends Command {
 	// Called once after isFinished returns true
 	@Override
 	protected void end() {
+		Robot.driveTrain.drive.stopMotor();
 	}
 
 	// Called when another command which requires one or more of the same
 	// subsystems is scheduled to run
 	@Override
 	protected void interrupted() {
+		end();
 	}
+
 }
