@@ -20,12 +20,12 @@ import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 /**
  * An example subsystem.  You can replace me with your own Subsystem.
  */
-public class ShootingSubSystem extends Subsystem {
+public class ShootingSubsystem extends Subsystem {
 	public Solenoid Shooter;
 	public Talon motor;
 	// Put methods for controlling this subsystem
 	// here. Call these from Commands.
-	public ShootingSubSystem()
+	public ShootingSubsystem()
 	{
 		Shooter = new Solenoid(1);
 		motor = new Talon(RobotMap.LiftMotor);

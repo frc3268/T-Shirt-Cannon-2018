@@ -20,17 +20,27 @@ import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 /**
  * An example subsystem.  You can replace me with your own Subsystem.
  */
-public class DriveTrainSubSystem extends Subsystem {
-	Talon LeftMotor;
-	Talon RightMotor;
+public class DriveTrainSubsystem extends Subsystem {
+	Talon driveLeftFront;
+	Talon driveLeftBack;
+	Talon driveRightFront;
+	Talon driveRightBack;
+	SpeedControllerGroup driveLeft;
+	SpeedControllerGroup driveRight;
 	public DifferentialDrive drive;
 	// Put methods for controlling this subsystem
 	// here. Call these from Commands.
-	public DriveTrainSubSystem()
+	public DriveTrainSubsystem()
 	{
-		LeftMotor = new Talon(RobotMap.LeftMotor);
-		RightMotor = new Talon(RobotMap.RightMotor);
-		drive = new DifferentialDrive(LeftMotor,RightMotor);
+		driveLeftFront 	= new Talon(RobotMap.PWM_driveLeftFront);
+		driveLeftBack 	= new Talon(RobotMap.PWM_driveLeftBack);
+		driveRightFront	= new Talon(RobotMap.PWM_driveRightFront);
+		driveRightBack 	= new Talon(RobotMap.PWM_driveRightBack);
+		driveLeft	= new SpeedControllerGroup(driveLeftFront, driveLeftBack);
+		driveRight	= new SpeedControllerGroup(driveRightFront, driveRightBack);
+		driveLeft.setInverted(true);
+		driveRight.setInverted(true);
+		drive = new DifferentialDrive(driveLeft, driveRight);
 	}
 	public void tankDrive(Joystick joy) {
 		drive.tankDrive(joy.getY(), joy.getRawAxis(4));

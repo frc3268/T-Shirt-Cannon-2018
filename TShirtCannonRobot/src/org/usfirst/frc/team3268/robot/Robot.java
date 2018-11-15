@@ -23,8 +23,8 @@ import org.usfirst.frc.team3268.robot.subsystems.*;
  * project.
  */
 public class Robot extends TimedRobot {
-	public static DriveTrainSubSystem driveTrain = new DriveTrainSubSystem();
-	public static ShootingSubSystem shooter = new ShootingSubSystem();
+	public static DriveTrainSubsystem driveTrain = new DriveTrainSubsystem();
+	public static ShootingSubsystem shooter = new ShootingSubsystem();
 	public static OI m_oi;
 	Command m_autonomousCommand;
 	SendableChooser<Command> m_chooser = new SendableChooser<>();
