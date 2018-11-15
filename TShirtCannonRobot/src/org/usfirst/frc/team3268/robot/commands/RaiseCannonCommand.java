@@ -18,13 +18,13 @@ public class RaiseCannonCommand extends Command {
 	
 	public RaiseCannonCommand() {
 		// Use requires() here to declare subsystem dependencies
-		requires(Robot.shooter);
+		requires(Robot.aiming);
 	}
 
 	// Called repeatedly when this Command is scheduled to run
 	@Override
 	protected void execute() {
-		Robot.shooter.motor.set(1);
+		Robot.aiming.SetMotor(1);
 	}
 
 	// Make this return true when this Command no longer needs to run execute()
