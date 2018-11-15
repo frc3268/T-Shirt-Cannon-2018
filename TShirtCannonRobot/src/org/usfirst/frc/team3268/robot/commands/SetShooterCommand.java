@@ -21,8 +21,7 @@ public class SetShooterCommand extends Command {
 
 	public SetShooterCommand(boolean val) {
 		// Use requires() here to declare subsystem dependencies
-		requires(Robot.pneumatics);
-		Robot.pneumatics.SetCompressor(1);
+		requires(Robot.shooter);
 		status = val;
 		finished = false;
 	}
@@ -30,14 +29,13 @@ public class SetShooterCommand extends Command {
 	// Called repeatedly when this Command is scheduled to run
 	@Override
 	protected void execute() {
-		Robot.pneumatics.SetShooter(status);
+		Robot.shooter.shooter.set(status);
 		finished = true;
 	}
 
 	// Make this return true when this Command no longer needs to run execute()
 	@Override
 	protected boolean isFinished() {
-		Robot.pneumatics.SetCompressor(0);
 		return finished;
 	}
 
