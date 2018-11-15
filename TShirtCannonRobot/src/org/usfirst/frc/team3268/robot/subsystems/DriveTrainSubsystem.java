@@ -53,8 +53,8 @@ public class DriveTrainSubsystem extends Subsystem {
 	 * @param leftAxis  Left sides value
 	 * @param rightAxis Right sides value
 	 */
-	public void ArcadeDrive(double xSpeed, double zRotation) {
-		drive.arcadeDrive(xSpeed, zRotation);
+	public void tankDrive(double leftAxis, double rightAxis) {
+		drive.tankDrive(leftAxis, rightAxis);
 	}
 
 	public void stop() {
