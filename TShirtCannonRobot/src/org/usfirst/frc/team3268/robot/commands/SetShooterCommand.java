@@ -15,10 +15,12 @@ import org.usfirst.frc.team3268.robot.Robot;
 /**
  * An example command.  You can replace me with your own command.
  */
-public class DrivingCommand extends Command {
-	public DrivingCommand() {
+public class SetShooterCommand extends Command {
+	boolean status;
+	public SetShooterCommand(boolean val) {
 		// Use requires() here to declare subsystem dependencies
-		requires(Robot.driveTrain);
+		requires(Robot.shooter);
+		status = val;
 	}
 
 	// Called just before this Command runs the first time
@@ -29,7 +31,8 @@ public class DrivingCommand extends Command {
 	// Called repeatedly when this Command is scheduled to run
 	@Override
 	protected void execute() {
-		Robot.driveTrain.tankDrive(OI.stick);
+		Robot.shooter.Shooter.set(status);
+		
 	}
 
 	// Make this return true when this Command no longer needs to run execute()

@@ -18,7 +18,7 @@ import org.usfirst.frc.team3268.robot.RobotMap;
  * An example command.  You can replace me with your own command.
  */
 public class LowerCannonCommand extends Command {
-	Talon motor;
+
 	public LowerCannonCommand() {
 		// Use requires() here to declare subsystem dependencies
 	}
@@ -26,13 +26,12 @@ public class LowerCannonCommand extends Command {
 	// Called just before this Command runs the first time
 	@Override
 	protected void initialize() {
-		motor = new Talon(RobotMap.LowerButton);
 	}
 
 	// Called repeatedly when this Command is scheduled to run
 	@Override
 	protected void execute() {
-		motor.set(-1);
+		Robot.shooter.motor.set(-1);
 	}
 
 	// Make this return true when this Command no longer needs to run execute()

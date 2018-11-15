@@ -25,9 +25,9 @@ public class OI {
 	// Joystick stick = new Joystick(port);
 	// Button button = new JoystickButton(stick, buttonNumber);
 	public static Joystick stick = new Joystick(0);
-	public static Button Raise = new JoystickButton(stick, RobotMap.RaiseButton);
-	public static Button Lower = new JoystickButton(stick, RobotMap.LowerButton);
-	public static Button Shoot = new JoystickButton(stick, RobotMap.ShootButton);
+	public static Button Raise = new JoystickButton(stick, 4);
+	public static Button Lower = new JoystickButton(stick, 5);
+	public static Button Shoot = new JoystickButton(stick, 12);
 	// There are a few additional built in buttons you can use. Additionally,
 	// by subclassing Button you can create custom triggers and bind those to
 	// commands the same as any other Button.
@@ -42,7 +42,7 @@ public class OI {
 
 	// Run the command while the button is being held down and interrupt it once
 	// the button is released.
-	// button.whileHeld(new ExampleCommand());
+	// buttonx.whileHeld(new ExampleCommand());
 
 	// Start the command when the button is released and let it run the command
 	// until it is finished as determined by it's isFinished method.
@@ -52,7 +52,7 @@ public class OI {
 	{
 		Raise.whenPressed(new RaiseCannonCommand());
 		Lower.whenPressed(new LowerCannonCommand());
-		Shoot.whenPressed(new OpenShooterCommand());
-		Shoot.whenReleased(new CloseShooterCommand());
+		Shoot.whenPressed(new SetShooterCommand(true));
+		Shoot.whenReleased(new SetShooterCommand(false));
 	}
 }

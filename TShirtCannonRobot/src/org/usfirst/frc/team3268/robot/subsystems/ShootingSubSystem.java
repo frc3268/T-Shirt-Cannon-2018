@@ -22,11 +22,13 @@ import edu.wpi.first.wpilibj.drive.DifferentialDrive;
  */
 public class ShootingSubSystem extends Subsystem {
 	public Solenoid Shooter;
+	public Talon motor;
 	// Put methods for controlling this subsystem
 	// here. Call these from Commands.
 	public ShootingSubSystem()
 	{
 		Shooter = new Solenoid(1);
+		motor = new Talon(RobotMap.LiftMotor);
 	}
 	public void initDefaultCommand() {
 		// Set the default command for a subsystem here.

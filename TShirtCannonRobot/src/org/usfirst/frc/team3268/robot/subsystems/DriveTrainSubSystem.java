@@ -11,6 +11,7 @@ import org.usfirst.frc.team3268.robot.Robot;
 import org.usfirst.frc.team3268.robot.RobotMap;
 import org.usfirst.frc.team3268.robot.commands.DrivingCommand;
 
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -31,6 +32,20 @@ public class DriveTrainSubSystem extends Subsystem {
 		RightMotor = new Talon(RobotMap.RightMotor);
 		drive = new DifferentialDrive(LeftMotor,RightMotor);
 	}
+	public void tankDrive(Joystick joy) {
+		drive.tankDrive(joy.getY(), joy.getRawAxis(4));
+	}
+
+	/**
+	 * Tank drive using individual joystick axes.
+	 *
+	 * @param leftAxis Left sides value
+	 * @param rightAxis Right sides value
+	 */
+	public void tankDrive(double leftAxis, double rightAxis) {
+		drive.tankDrive(leftAxis, rightAxis);
+	}
+
 	public void initDefaultCommand() {
 		// Set the default command for a subsystem here.
 		// setDefaultCommand(new MySpecialCommand());
