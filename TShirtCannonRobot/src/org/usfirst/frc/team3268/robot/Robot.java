@@ -25,7 +25,8 @@ import org.usfirst.frc.team3268.robot.subsystems.*;
 public class Robot extends TimedRobot {
 
 	public static DriveTrainSubsystem driveTrain = new DriveTrainSubsystem();
-	public static ShootingSubsystem shooter = new ShootingSubsystem();
+	public static PneumaticsSubsystem pneumatics = new PneumaticsSubsystem();
+	public static AimingSubSystem aiming = new AimingSubSystem();
 	public static OI m_oi;
 
 	Command m_autonomousCommand;
